@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Handa — catering operations desk</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23211c16'/><text x='50' y='68' text-anchor='middle' font-size='58' font-family='Georgia' fill='%23f3eadb'>H</text></svg>">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <p class="kicker">Mesa Clara · Quezon City</p>
+      <h1>Handa</h1>
+      <p class="tag">Synthetic pesos. One brief at a time.</p>
+    </div>
+    <p class="statusline" id="health">Checking the desk…</p>
+  </header>
+  <nav class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="intake" aria-selected="true">Intake</button>
+    <button type="button" role="tab" data-tab="trace" aria-selected="false">Trace</button>
+    <button type="button" role="tab" data-tab="menu" aria-selected="false">Menu</button>
+    <button type="button" role="tab" data-tab="shopping" aria-selected="false">Shopping list</button>
+    <button type="button" role="tab" data-tab="timeline" aria-selected="false">Timeline</button>
+    <button type="button" role="tab" data-tab="quote" aria-selected="false">Quote</button>
+  </nav>
+  <p class="banner" id="banner" hidden></p>
+  <main>
+    <section id="panel-intake" role="tabpanel">
+      <div class="col-head">
+        <h2>Intake</h2>
+        <p>Write the event in a sentence. If a required field is missing, the desk stops and asks.</p>
+      </div>
+      <div class="samples" id="samples"></div>
+      <ol class="chat" id="chat" aria-live="polite"></ol>
+      <form id="followup" hidden></form>
+      <form id="composer">
+        <label>Event request
+          <textarea name="text" rows="3" required maxlength="4000" placeholder="Northwind BPO needs a corporate lunch for 60 guests in 21 days at 12:00 in Taguig. Budget 45000 pesos. No pork."></textarea>
+        </label>
+        <button type="submit" class="primary" id="send-btn">Send to the desk</button>
+      </form>
+    </section>
+    <section id="panel-trace" role="tabpanel" hidden>
+      <div class="col-head">
+        <h2>Trace</h2>
+        <p id="trace-meta">Handoffs appear as each node finishes.</p>
+      </div>
+      <ol class="trace" id="trace" aria-live="polite"></ol>
+    </section>
+    <section id="panel-menu" role="tabpanel" hidden>
+      <div class="col-head"><h2>Menu</h2><p>Portions come from the guest count. Rice and drinks include a 5% buffer.</p></div>
+      <div id="menu"></div>
+    </section>
+    <section id="panel-shopping" role="tabpanel" hidden>
+      <div class="col-head"><h2>Shopping list</h2><p>Stock is netted first. A shortfall below the minimum order is raised to it. A late supplier is switched.</p></div>
+      <div id="shopping"></div>
+    </section>
+    <section id="panel-timeline" role="tabpanel" hidden>
+      <div class="col-head"><h2>Timeline</h2><p>Prep is walked backward from the service time.</p></div>
+      <div id="timeline"></div>
+    </section>
+    <section id="panel-quote" role="tabpanel" hidden>
+      <div class="col-head"><h2>Quote</h2><p id="quote-note">Synthetic PHP. Nothing is issued until you say so.</p></div>
+      <div id="quote"></div>
+      <div class="actions" id="disrupt" hidden>
+        <button type="button" class="ghost" data-disrupt="supplier_delay">Supplier delay</button>
+        <button type="button" class="ghost" data-disrupt="spoilage">Spoilage</button>
+        <button type="button" class="ghost" data-disrupt="extra_guests">+15 guests</button>
+      </div>
+    </section>
+  </main>
+  <footer><p>Fictional kitchen. Prices are a teaching book, not a booking.</p></footer>
+  <script src="/assets/app.js"></script>
+</body>
+</html>
