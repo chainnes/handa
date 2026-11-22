@@ -1,0 +1,7 @@
+.venv
+.handa
+.git
+**/__pycache__
+.env
+.pytest_cache
+*.egg-info
