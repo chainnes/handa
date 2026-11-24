@@ -1,4 +1,6 @@
-# Handa
+# Multi-Agent Catering Operations
+
+Codename: Handa
 
 Handa is a catering operations desk for **Mesa Clara**, a fictional caterer in Quezon City. You describe an event in a sentence. A model files the brief, chooses the dishes, and writes the client sentence. Python computes every quantity, peso, and time.
 
