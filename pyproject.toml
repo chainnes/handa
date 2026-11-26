@@ -1,7 +1,7 @@
 [project]
 name = "handa"
 version = "0.1.0"
-description = "Handa is a multi-agent catering operations desk. It turns an event brief into a menu, a purchase list, a budget check, a crew plan, and a quotation a manager has to approve."
+description = "A multi-agent catering operations desk. It turns an event brief into a menu, a purchase list, a budget check, a crew plan, and a quotation a manager has to approve."
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"

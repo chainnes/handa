@@ -1,8 +1,6 @@
 # Multi-Agent Catering Operations
 
-Codename: Handa
-
-Handa is a catering operations desk for **Mesa Clara**, a fictional caterer in Quezon City. You describe an event in a sentence. A model files the brief, chooses the dishes, and writes the client sentence. Python computes every quantity, peso, and time.
+Multi-Agent Catering Operations is a catering operations desk for **Mesa Clara**, a fictional caterer in Quezon City. You describe an event in a sentence. A model files the brief, chooses the dishes, and writes the client sentence. Python computes every quantity, peso, and time.
 
 This is a personal portfolio build by Charlene Cordero, based on the public problem statement from the Code; Without Barriers Hackathon (id8nxt): one event brief has to become a menu, a shopping list, a timeline, and a quotation. It is not a hackathon submission. Mesa Clara, the recipes, and the prices are sample data. It is not affiliated with id8nxt or any caterer, and it makes no claim about a real client's results.
 
@@ -168,7 +166,7 @@ The app is one Python process. Mock mode needs no database and no API key. On bo
 - Start command: `python -m handa`
 - Environment: `HANDA_LLM_PROVIDER=mock`
 
-Render sets `PORT`. Handa listens on that. Free instances sleep when idle, and the in-memory checkpointer forgets in-flight approvals on restart. That is fine for a demo. A finished quotation is not stored anywhere except the running process.
+Render sets `PORT`. The app listens on that. Free instances sleep when idle, and the in-memory checkpointer forgets in-flight approvals on restart. That is fine for a demo. A finished quotation is not stored anywhere except the running process.
 
 **Fly.io or any host that runs a container.** The `Dockerfile` starts the same process. Check the host's current allowance before you rely on it. A mock-mode deploy still needs no key.
 
@@ -212,4 +210,4 @@ Sample pesos in the app come from seed `20261115`. They are not a client's resul
 
 ## CV description
 
-Handa is a catering operations desk for a fictional Quezon City caterer. A LangGraph pipeline uses a tool-calling model for intake, the menu, and a one-line client summary, and uses Python for every quantity, peso, supplier choice, and clock time. Intake files an event through a validated tool and asks a follow-up when a field is missing. The menu agent searches a Chroma recipe index, checks diet tags, and reads the budget per guest before it names dishes. A quote that is over budget is revised at most twice, then flagged. The default run is a scripted model with no API key. The same graph can call any OpenAI-compatible server, including a local Ollama. It does not send purchase orders, take payment, or keep the file after a restart.
+Multi-Agent Catering Operations is a catering operations desk for a fictional Quezon City caterer. A LangGraph pipeline uses a tool-calling model for intake, the menu, and a one-line client summary, and uses Python for every quantity, peso, supplier choice, and clock time. Intake files an event through a validated tool and asks a follow-up when a field is missing. The menu agent searches a Chroma recipe index, checks diet tags, and reads the budget per guest before it names dishes. A quote that is over budget is revised at most twice, then flagged. The default run is a scripted model with no API key. The same graph can call any OpenAI-compatible server, including a local Ollama. It does not send purchase orders, take payment, or keep the file after a restart.
